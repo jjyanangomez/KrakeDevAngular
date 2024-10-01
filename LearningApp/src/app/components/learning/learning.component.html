@@ -1,0 +1,24 @@
+<h1>Hello LearningApp</h1>
+<div>
+    <p>Identificador: {{course.id}} </p>
+    <p>Nombre Curso: {{course.name}} </p>
+    <div>
+        <h3>Lista de Estudiantes</h3>
+        <table>
+            <thead>
+                <th>Identificador</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </thead>
+            <tbody>
+                @for (item of course.students; track $index) {
+                    <tr>
+                        <td> {{item.identification}} </td>
+                        <td> {{item.name}} </td>
+                        <td> {{item.surname}} </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
