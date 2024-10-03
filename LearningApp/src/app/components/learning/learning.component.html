@@ -4,29 +4,11 @@
             <h1 class="text-center">Hello LearningApp</h1>
         </div>
         <div class="card-body">
-            <p><strong>Identificador:</strong> {{course.id}}</p>
-            <p><strong>Nombre Curso:</strong> {{course.name}}</p>
+            <course-header [course]="course"></course-header>
             <div class="mt-4">
                 <h3>Lista de Estudiantes</h3>
                 <div class="table">
-                    <table class="table table-striped table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Identificador</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (item of course.students; track $index) {
-                            <tr>
-                                <td>{{item.identification}}</td>
-                                <td>{{item.name}}</td>
-                                <td>{{item.surname}}</td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
+                    <invoice-detail [students]="course.students"></invoice-detail>
                 </div>
             </div>
         </div>
